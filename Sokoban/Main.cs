@@ -10,7 +10,7 @@ namespace Sokoban
 
         public void startGame()
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine("Hello World");
         }
     }
 }
