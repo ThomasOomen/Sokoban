@@ -7,5 +7,18 @@ namespace Sokoban
     public class Floor : Square
     {
         private Destination hasDestination;
+
+        public int TileStatus
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public void tileStatus()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

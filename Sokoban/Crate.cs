@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Crate : Square
+    public class Crate
     {
-        public void changeLocation()
+        public void moveCrate()
         {
             throw new System.NotImplementedException();
         }

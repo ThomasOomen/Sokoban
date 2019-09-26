@@ -6,7 +6,6 @@ namespace Sokoban
 {
     public class Playfield
     {
-        private Crate crate;
         private Wall wall;
         private Floor floor;
     }

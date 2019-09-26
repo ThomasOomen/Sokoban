@@ -1,56 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Sokoban.Crate">
-    <Position X="3.25" Y="9" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Crate.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Sokoban.Destination">
-    <Position X="11.75" Y="9" Width="1.5" />
+    <Position X="11.75" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Destination.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Wall">
-    <Position X="6" Y="9" Width="1.5" />
+    <Position X="6" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Square">
-    <Position X="6" Y="11.75" Width="1.5" />
+    <Position X="6" Y="12.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAgAAAAAAAAAA=</HashCode>
       <FileName>Square.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Truck">
-    <Position X="3.25" Y="4.75" Width="1.5" />
+    <Position X="0.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAgAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Truck.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Playfield">
-    <Position X="6" Y="7.25" Width="1.5" />
-    <AssociationLine Name="crate" Type="Sokoban.Crate" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="6" Y="7.625" />
-        <Point X="4" Y="7.625" />
-        <Point X="4" Y="9" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.068" Y="0.425" />
-      </MemberNameLabel>
-    </AssociationLine>
+    <Position X="6" Y="8.25" Width="1.5" />
     <AssociationLine Name="wall" Type="Sokoban.Wall" FixedFromPoint="true">
       <Path>
-        <Point X="6.75" Y="8.118" />
-        <Point X="6.75" Y="9" />
+        <Point X="6.75" Y="9.118" />
+        <Point X="6.75" Y="10" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.1" Y="0.372" />
@@ -58,32 +41,31 @@
     </AssociationLine>
     <AssociationLine Name="floor" Type="Sokoban.Floor" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.5" Y="7.684" />
-        <Point X="9.562" Y="7.684" />
-        <Point X="9.562" Y="9" />
+        <Point X="7.5" Y="8.684" />
+        <Point X="9.562" Y="8.684" />
+        <Point X="9.562" Y="10" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.07" Y="0.391" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAEAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
       <FileName>Playfield.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="crate" />
       <Field Name="wall" />
       <Field Name="floor" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Floor">
-    <Position X="8.75" Y="9" Width="1.5" />
+    <Position X="8.75" Y="10" Width="1.5" />
     <InheritanceLine Type="Sokoban.Square" ManuallyRouted="true">
       <Path>
-        <Point X="6.75" Y="11.75" />
-        <Point X="6.75" Y="10.615" />
-        <Point X="9.5" Y="10.615" />
-        <Point X="9.5" Y="9.997" />
+        <Point X="6.75" Y="12.75" />
+        <Point X="6.75" Y="12.05" />
+        <Point X="9.5" Y="12.05" />
+        <Point X="9.5" Y="11.684" />
       </Path>
     </InheritanceLine>
     <AssociationLine Name="hasDestination" Type="Sokoban.Destination">
@@ -92,7 +74,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAIAAAACAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Floor.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -100,7 +82,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Parser">
-    <Position X="8.25" Y="2.5" Width="2.5" />
+    <Position X="12.25" Y="4.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Parser.cs</FileName>
@@ -113,14 +95,24 @@
         <Position X="0.033" Y="0.219" />
       </MemberNameLabel>
     </AssociationLine>
+    <AssociationLine Name="crate" Type="Sokoban.Crate" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6" Y="6.077" />
+        <Point X="5.625" Y="6.077" />
+        <Point X="5.625" Y="7.302" />
+        <Point X="2" Y="7.302" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAQAAAAAAAABAAACAAAAAAAAAAAAAAAAQAAAAIAA=</HashCode>
+      <HashCode>AAAAAQAAEAAAAABACACAAAAAAAAAAAAAAAAQAAAAIAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="parser" />
       <Field Name="truck" />
       <Field Name="playfield" />
+      <Field Name="crate" />
+      <Field Name="coworker" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Controller">
@@ -176,6 +168,20 @@
     <TypeIdentifier>
       <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>OutputView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.Crate">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Crate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.Coworker">
+    <Position X="12.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Coworker.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
