@@ -4,11 +4,19 @@ using System.Text;
 
 namespace Sokoban
 {
+    //Input geeft aan hoe speler moet spelen. handelt meteen af als er een verkeerde input is gegeven. 
     public class InputView
     {
         public void readInput()
         {
-            throw new System.NotImplementedException();
+            
+        }
+
+        //Vraagt voor maze nummer (level). 
+        public int AskForMazeNumber()
+        {
+            return 0;
         }
     }
 }
+

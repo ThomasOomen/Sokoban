@@ -4,11 +4,14 @@ using System.Text;
 
 namespace Sokoban
 {
+
     public class OutputView
     {
-        public void writeOutput()
+        public void gameStartUp()
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine("______________");
+            Console.WriteLine("| Sokoban |");
+            Console.WriteLine("______________");
         }
     }
 }

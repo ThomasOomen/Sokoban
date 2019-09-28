@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Sokoban.View;
 
 namespace Sokoban
 {
@@ -11,6 +12,13 @@ namespace Sokoban
         private Playfield playfield;
         private Crate crate;
         private Coworker coworker;
+        private InputView inputview;
+        private OutputView outputview;
+
+        public void startGame()
+        {
+            outputview = new OutputView();
+        }
 
         public void moveTruck()
         {
@@ -26,5 +34,7 @@ namespace Sokoban
         {
             throw new System.NotImplementedException();
         }
+
+
     }
 }

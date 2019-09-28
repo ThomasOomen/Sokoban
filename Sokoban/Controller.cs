@@ -6,7 +6,6 @@ namespace Sokoban
 {
     public class Controller
     {
-        private Game game;
         private InputView inputview;
         private OutputView outputview;
 

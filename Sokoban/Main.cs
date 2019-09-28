@@ -6,11 +6,10 @@ namespace Sokoban
 {
     public class Main
     {
-        private Controller controller;
-
+        private Game game;
         public void startGame()
         {
-            Console.WriteLine("Hello World");
+            game = new Game();
         }
     }
 }

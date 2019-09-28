@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Sokoban.Destination">
-    <Position X="11.75" Y="10" Width="1.5" />
+    <Position X="14.75" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Destination.cs</FileName>
@@ -65,20 +65,36 @@
         <Point X="6.75" Y="12.75" />
         <Point X="6.75" Y="12.05" />
         <Point X="9.5" Y="12.05" />
-        <Point X="9.5" Y="11.684" />
+        <Point X="9.5" Y="10.997" />
       </Path>
     </InheritanceLine>
-    <AssociationLine Name="hasDestination" Type="Sokoban.Destination">
+    <AssociationLine Name="hasDestination" Type="Sokoban.Destination" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="10.938" />
+        <Point X="15.5" Y="10.938" />
+        <Point X="15.5" Y="9.603" />
+      </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.248" Y="0.037" />
+        <Position X="0.047" Y="1.102" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="isDestroyable" Type="Sokoban.DestroyableTile" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="10.625" />
+        <Point X="12.688" Y="10.625" />
+        <Point X="12.688" Y="9.368" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.07" Y="0.995" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAIAAAACAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAA=</HashCode>
       <FileName>Floor.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="hasDestination" />
+      <Field Name="isDestroyable" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Parser">
@@ -97,14 +113,21 @@
     </AssociationLine>
     <AssociationLine Name="crate" Type="Sokoban.Crate" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="6" Y="6.077" />
-        <Point X="5.625" Y="6.077" />
+        <Point X="6" Y="6.216" />
+        <Point X="5.625" Y="6.216" />
         <Point X="5.625" Y="7.302" />
         <Point X="2" Y="7.302" />
       </Path>
     </AssociationLine>
+    <AssociationLine Name="outputview" Type="Sokoban.OutputView" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.156" Y="5" />
+        <Point X="7.156" Y="1.062" />
+        <Point X="8" Y="1.062" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAQAAEAAAAABACACAAAAAAAAAAAAAAAAQAAAAIAA=</HashCode>
+      <HashCode>AAAAAQAAEAAAAABACCKAAAAAAAAAAAQAAAAQAAAAIAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -113,47 +136,25 @@
       <Field Name="playfield" />
       <Field Name="crate" />
       <Field Name="coworker" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="Sokoban.Controller">
-    <Position X="6" Y="2.5" Width="1.5" />
-    <AssociationLine Name="game" Type="Sokoban.Game">
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.086" Y="0.515" />
-      </MemberNameLabel>
-    </AssociationLine>
-    <AssociationLine Name="inputview" Type="Sokoban.InputView" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="6.555" Y="2.5" />
-        <Point X="6.555" Y="0.688" />
-        <Point X="5.75" Y="0.688" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="outputview" Type="Sokoban.OutputView" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="7.172" Y="2.5" />
-        <Point X="7.172" Y="0.738" />
-        <Point X="8" Y="0.738" />
-      </Path>
-    </AssociationLine>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAACIAAAAAAAAAAAQIAAAQAAAAAAA=</HashCode>
-      <FileName>Controller.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="game" />
       <Field Name="inputview" />
       <Field Name="outputview" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Sokoban.Main">
-    <Position X="3.25" Y="2.5" Width="1.5" />
+  <Class Name="Sokoban.Controller">
+    <Position X="14.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAACIAAAAAAAAAAAQAAAAQAAAAAAA=</HashCode>
+      <FileName>Controller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.Main">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>Main.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="controller" />
+      <Field Name="game" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.InputView">
@@ -182,6 +183,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Coworker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.DestroyableTile">
+    <Position X="11.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DestroyableTile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
