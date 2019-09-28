@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Sokoban
 {
-    public class Main
+    class Main
     {
         private Game game;
-        public void startGame()
+
+        static void Run(string[] args)
         {
-            game = new Game();
+            new Game();
         }
     }
 }

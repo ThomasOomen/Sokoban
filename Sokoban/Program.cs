@@ -4,9 +4,11 @@ namespace Sokoban
 {
     class Program
     {
-        static void Main(string[] args)
+        private Game game;
+
+        static void Run(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            new Game();
         }
     }
 }

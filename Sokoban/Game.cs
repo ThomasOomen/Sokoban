@@ -1,40 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Sokoban.View;
 
 namespace Sokoban
 {
     public class Game
     {
+        private InputView inputView;
+        private OutputView outputView;
         private Parser parser;
         private Truck truck;
-        private Playfield playfield;
         private Crate crate;
         private Coworker coworker;
-        private InputView inputview;
-        private OutputView outputview;
+        private Maze maze;
 
-        public void startGame()
+        public Game()
         {
-            outputview = new OutputView();
+            outputView = new OutputView();
+            inputView = new InputView();
+            startUpGame();
         }
 
-        public void moveTruck()
+        public void startUpGame()
         {
-            throw new System.NotImplementedException();
+            outputView.showStartUp();
+            Console.WriteLine(inputView.getMazeLevel());
+
         }
 
-        public void printField()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void moveCrate()
+        public void Method1()
         {
             throw new System.NotImplementedException();
         }
 
+        public void Method2()
+        {
+            throw new System.NotImplementedException();
+        }
 
+        public void Method3()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

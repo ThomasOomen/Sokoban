@@ -4,14 +4,28 @@ using System.Text;
 
 namespace Sokoban
 {
-
     public class OutputView
     {
-        public void gameStartUp()
+        public OutputView()
         {
-            Console.WriteLine("______________");
-            Console.WriteLine("| Sokoban |");
-            Console.WriteLine("______________");
+
+        }
+        public void showStartUp()
+        {
+            Console.WriteLine("________________________________________________________________");
+            Console.WriteLine("|    Sokoban");
+            Console.WriteLine("|    ");
+            Console.WriteLine("|    Betekenis van de symbolen: ");
+            Console.WriteLine("|    # : muur");
+            Console.WriteLine("|    . : vloer");
+            Console.WriteLine("|    O : krat");
+            Console.WriteLine("|    0 : krat op bestemming");
+            Console.WriteLine("|    x : bestemming");
+            Console.WriteLine("|    @ : truck");
+            Console.WriteLine("|");
+            Console.WriteLine("|    Doel van het spel:");
+            Console.WriteLine("|    Duw met de truck de kratten naar de bestemming");
+            Console.WriteLine("________________________________________________________________");
         }
     }
 }
