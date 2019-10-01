@@ -6,6 +6,7 @@ namespace Sokoban
 {
     public class Game
     {
+        private int mazeLevel = 0;
         private InputView inputView;
         private OutputView outputView;
         private Parser parser;
@@ -18,14 +19,25 @@ namespace Sokoban
         {
             outputView = new OutputView();
             inputView = new InputView();
+            parser = new Parser();
             startUpGame();
         }
 
         public void startUpGame()
         {
             outputView.showStartUp();
-            Console.WriteLine(inputView.getMazeLevel());
+            //als return van getMazelevel -100 wordt exitGame() methode aangeroepen.
+            mazeLevel = inputView.getMazeLevel();
+            if (mazeLevel != -100)
+            {
+                Console.WriteLine(mazeLevel);                
+            }
+            else
+            {
 
+            }
+            
+            
         }
 
         public void Method1()
@@ -38,9 +50,9 @@ namespace Sokoban
             throw new System.NotImplementedException();
         }
 
-        public void Method3()
+        public void exitGame()
         {
-            throw new System.NotImplementedException();
+            Environment.Exit(0);
         }
     }
 }

@@ -14,13 +14,15 @@ namespace Sokoban
         public int getMazeLevel()
         {
             selectedMazelevel = 0;
-            while ((selectedMazelevel < 1 || selectedMazelevel > 5) && inputChar != 's')
+            while ((selectedMazelevel < 1 || selectedMazelevel > 7) && inputChar != 's')
             {
-                Console.WriteLine("Kies een doolhof 1 - 4, s = stop");
+                
+                Console.WriteLine("|    Kies een doolhof 1 - 6, s = stop                           |");
+                Console.WriteLine("________________________________________________________________");
                 ConsoleKeyInfo consoleKeyInfo = Console.ReadKey();
                 inputChar = consoleKeyInfo.KeyChar;
                 Console.WriteLine();
-                if (inputChar >= '1' && inputChar <= '4')
+                if (inputChar >= '1' && inputChar <= '6')
                     selectedMazelevel = Convert.ToInt32(char.ToString(consoleKeyInfo.KeyChar));
                 else if (inputChar != 's')
                     Console.WriteLine("> ?");
