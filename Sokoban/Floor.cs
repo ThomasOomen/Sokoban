@@ -8,5 +8,10 @@ namespace Sokoban
     {
         private Destination hasDestination;
         private DestroyableTile isDestroyable;
+
+        public override bool IsEmpty()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

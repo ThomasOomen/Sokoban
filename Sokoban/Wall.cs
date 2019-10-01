@@ -10,5 +10,10 @@ namespace Sokoban
         {
             throw new System.NotImplementedException();
         }
+
+        public override bool IsEmpty()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
