@@ -31,5 +31,70 @@ namespace Sokoban
                 selectedMazelevel = -100;
             return selectedMazelevel;
         }
+
+        //Print line met de vraag of de gebruiker een key wilt indrukken.
+        internal void AskForInput()
+        {
+            Console.WriteLine("> gebruik de pijltjes toetsen om de heftruck te verplaatsen");
+            Console.WriteLine("Met 's' kan je stoppen, met 'r' kan je de game resetten");
+        }
+
+        // Leest input van speler om daarna, returnt daarna een int value, de int value bepaald welke
+        // richting de speler opgaat.
+        // Links  = 1
+        // Omhoog = 2
+        // Rechts = 3
+        // Down   = 4
+        // Reset  = -101
+        // Stop   = -102
+
+        public int ReadInputKey(Boolean flag)
+        {
+            ConsoleKey playerInput = ConsoleKey.Escape;
+            while (flag)
+            {
+                playerInput = Console.ReadKey().Key;
+                switch(playerInput)
+                {
+                    case ConsoleKey.LeftArrow:
+                    case ConsoleKey.UpArrow:
+                    case ConsoleKey.RightArrow:
+                    case ConsoleKey.DownArrow:
+                    case ConsoleKey.R:
+                    case ConsoleKey.S:
+                        flag = false;
+                        continue;
+                    default:
+                        Console.WriteLine("> ?");
+                        continue;
+                }
+            }
+
+            switch (playerInput)
+            {
+                case ConsoleKey.LeftArrow:
+                    Console.WriteLine("Links in ingedrukt");
+                    return 1;
+                case ConsoleKey.UpArrow:
+                    Console.WriteLine("Omhoog in ingedrukt");
+                    return 2;
+                case ConsoleKey.RightArrow:
+                    Console.WriteLine("Rechts in ingedrukt");
+                    return 3;
+                case ConsoleKey.DownArrow:
+                    Console.WriteLine("Omlaag in ingedrukt");
+                    return 4;
+                case ConsoleKey.R:
+                    Console.WriteLine("Reset in ingedrukt");
+                    return -101;
+                case ConsoleKey.S:
+                    Console.WriteLine("Stop in ingedrukt");
+                    return -102;
+                default:
+                    Console.WriteLine("woop woop");
+                    return 100000;
+            }
+
+        }
     }
 }

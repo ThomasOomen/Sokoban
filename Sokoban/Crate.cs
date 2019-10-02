@@ -4,11 +4,7 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Crate
+    public class Crate : MoveableObjects
     {
-        public void moveCrate()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

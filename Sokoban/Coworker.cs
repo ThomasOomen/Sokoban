@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Coworker
+    public class Coworker : MoveableObjects
     {
     }
 }

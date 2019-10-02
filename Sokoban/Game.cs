@@ -7,6 +7,7 @@ namespace Sokoban
     public class Game
     {
         private int mazeLevel = 0;
+        private Boolean flag = false;
         private InputView inputView;
         private OutputView outputView;
         private Parser parser;
@@ -30,7 +31,9 @@ namespace Sokoban
             mazeLevel = inputView.getMazeLevel();
             if (mazeLevel != -100)
             {
-                Console.WriteLine(mazeLevel);                
+                Console.WriteLine(mazeLevel);
+                playGame();
+                
             }
             else
             {
@@ -40,9 +43,11 @@ namespace Sokoban
             
         }
 
-        public void Method1()
+        public void playGame()
         {
-            throw new System.NotImplementedException();
+            inputView.AskForInput();
+            inputView.ReadInputKey(flag);
+            
         }
 
         public void Method2()

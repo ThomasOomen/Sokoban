@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Truck
+    public class Truck : MoveableObjects
     {
 
         public int PositionX
@@ -21,11 +21,6 @@ namespace Sokoban
             set
             {
             }
-        }
-
-        public void moveTruck()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
