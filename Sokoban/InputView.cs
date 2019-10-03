@@ -9,6 +9,7 @@ namespace Sokoban
         private int selectedMazelevel;
         private char inputChar;
 
+
         //Vraagt naar maze level 1 t/m 4 of naar de character s als de verkeerde wordt ingevuld print ie een ?, anders returnt ie de waarde van het doolhof level
         //als er s ingevuld wordt returnt ie -100, die -100 geeft aan dat de speler wilt stoppen. 
         public int getMazeLevel()
@@ -48,8 +49,9 @@ namespace Sokoban
         // Reset  = -101
         // Stop   = -102
 
-        public int ReadInputKey(Boolean flag)
+        public int ReadInputKey()
         {
+            bool flag = true;
             ConsoleKey playerInput = ConsoleKey.Escape;
             while (flag)
             {
@@ -91,7 +93,7 @@ namespace Sokoban
                     Console.WriteLine("Stop in ingedrukt");
                     return -102;
                 default:
-                    Console.WriteLine("woop woop");
+                    Console.WriteLine("Die ken ik niet");
                     return 100000;
             }
 
