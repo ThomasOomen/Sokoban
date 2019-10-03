@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class MoveableObjects
+    public abstract class MoveableObjects
     {
-        public void move()
-        {
-            throw new System.NotImplementedException();
-        }
+
+
+        public abstract void move();
+
     }
 }

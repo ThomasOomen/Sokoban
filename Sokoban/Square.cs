@@ -6,27 +6,74 @@ namespace Sokoban
 {
     public abstract class Square
     {
-        public Square Top { get; set; }
-        public Square Bottom { get; set; }
-        public Square Left { get; set; }
-        public Square Right { get; set; }
+        private int _Xposition { get; set; }
+        private int _Yposition { get; set; }
 
-        public abstract bool IsEmpty();
+        private MoveableObjects _MoveObject { get; set; }
 
-        public Square SquareInDirection(Direction direction)
+        public int Xposition
+        {
+            get
+            {
+                return _Xposition;
+            }
+            set
+            {
+                _Xposition = value;
+            }
+        }
+
+        public int Yposition
+        {
+            get
+            {
+                return _Yposition;
+            }
+            set
+            {
+                _Yposition = value;
+            }
+        }
+
+        public MoveableObjects MoveObject
+        {
+            get
+            {
+                return _MoveObject;
+            }
+            set
+            {
+                _MoveObject = value;
+            }
+        }
+
+
+        public bool IsEmpty()
+        {
+            if (this._MoveObject == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public int SquareInDirection(Direction direction)
         {
             switch (direction)
             {
                 case Direction.Up:
-                    return this.Top;
+                    return _Yposition - 1;
                 case Direction.Down:
-                    return this.Bottom;
+                    return _Yposition + 1;
                 case Direction.Left:
-                    return this.Left;
+                    return _Xposition - 1;
                 case Direction.Right:
-                    return this.Right;
+                    return _Xposition + 1;
                 default:
-                    return null;
+                    return 0;
             }
         }
     }

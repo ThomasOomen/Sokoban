@@ -11,8 +11,19 @@ namespace Sokoban
         private FileStream _fileStream;
         private StreamReader _streamReader;
         private Maze _maze;
-        private Char[,] _charArray;
+        private Char[,] _charArray { get; set; }
 
+        public Char[,] CharArray
+        {
+            get
+            {
+                return _charArray;
+            }
+            set
+            {
+                _charArray = value;
+            }
+        }
 
         public void calculateSize() //Berekent de breedte en hoogte van het doolhof (MOET NOG GETEST WORDEN)
         {
