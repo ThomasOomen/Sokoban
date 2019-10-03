@@ -47,7 +47,7 @@ namespace Sokoban
         public void playGame()
         {
             inputView.AskForInput();
-            Console.WriteLine(inputView.ReadInputKey());
+            parser.FillArray(mazeLevel);
 
             
         }

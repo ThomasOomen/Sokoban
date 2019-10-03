@@ -20,16 +20,26 @@ namespace Sokoban
                 
                 Console.WriteLine("|    Kies een doolhof 1 - 6, s = stop                           |");
                 Console.WriteLine("________________________________________________________________");
+
                 ConsoleKeyInfo consoleKeyInfo = Console.ReadKey();
                 inputChar = consoleKeyInfo.KeyChar;
                 Console.WriteLine();
                 if (inputChar >= '1' && inputChar <= '6')
+                {
                     selectedMazelevel = Convert.ToInt32(char.ToString(consoleKeyInfo.KeyChar));
+                }
+                    
                 else if (inputChar != 's')
+                {
                     Console.WriteLine("> ?");
+                }
+                    
             }
             if (inputChar == 's')
+            {
                 selectedMazelevel = -100;
+            }
+                
             return selectedMazelevel;
         }
 
@@ -40,17 +50,20 @@ namespace Sokoban
             Console.WriteLine("Met 's' kan je stoppen, met 'r' kan je de game resetten");
         }
 
-        // Leest input van speler om daarna, returnt daarna een int value, de int value bepaald welke
-        // richting de speler opgaat.
-        // Links  = 1
-        // Omhoog = 2
-        // Rechts = 3
-        // Down   = 4
-        // Reset  = -101
-        // Stop   = -102
 
+        /* 
+        Leest input van speler om daarna, returnt daarna een int value, de int value bepaald welke
+        richting de speler opgaat.
+        Links  = 1
+        Omhoog = 2
+        Rechts = 3
+        Down   = 4
+        Reset  = -101
+        Stop   = -102
+        */
         public int ReadInputKey()
         {
+
             bool flag = true;
             ConsoleKey playerInput = ConsoleKey.Escape;
             while (flag)
