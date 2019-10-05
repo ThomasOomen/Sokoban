@@ -48,7 +48,7 @@ namespace Sokoban
         }
 
 
-        public bool IsEmpty()
+        public virtual bool IsEmpty()
         {
             if (this._MoveObject == null)
             {
