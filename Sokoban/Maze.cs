@@ -6,8 +6,6 @@ namespace Sokoban
 {
     public class Maze
     {
-        private Wall wall;
-        private Floor floor;
 
         private Square[,] _grid { get; set; }
 

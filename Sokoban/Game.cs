@@ -71,17 +71,16 @@ namespace Sokoban
 
                         case "o": //Krat
                             this.maze.Grid[x, y] = new Floor();
-                            //plaats krat op vloer
+                            this.maze.Grid[x, y].MoveObject = new Crate();
                             break;
 
                         case "X": //Bestemming
                             this.maze.Grid[x, y] = new Destination();
-                            //maak van vloer een bestemming
                             break;
 
                         case "@": //Truck
                             this.maze.Grid[x, y] = new Floor();
-                            //plaats truck op vloer
+                            this.maze.Grid[x, y].MoveObject = new Truck();
                             break;
 
                         case "~": //Valkuil
@@ -90,12 +89,12 @@ namespace Sokoban
 
                         case "$": //Medewerker wakker
                             this.maze.Grid[x, y] = new Floor();
-                            //plaats wakkere medewerker op vloer
+                            this.maze.Grid[x, y].MoveObject = new Coworker();
                             break;
 
                         case "Z": //Medewerker slaapt
                             this.maze.Grid[x, y] = new Floor();
-                            //plaats slapende medewerker op vloer
+                            this.maze.Grid[x, y].MoveObject = new Coworker();
                             break;
                         default:
                             break;

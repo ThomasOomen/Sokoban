@@ -22,5 +22,10 @@ namespace Sokoban
             {
             }
         }
+
+        public override void move()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
