@@ -38,7 +38,6 @@ namespace Sokoban
         //vult de 2d array met alle tekens per regel
         public void FillArray(int levelNumber) 
         {
-            calculateSize();
             String line = _streamReader.ReadLine();
             int y = 0;
 
