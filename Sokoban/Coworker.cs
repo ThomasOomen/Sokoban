@@ -7,6 +7,36 @@ namespace Sokoban
     public class Coworker : MoveableObjects
     {
         public bool _isSleeping;
+        private int _xLoc;
+        private int _yLoc;
+        public Coworker(int x, int y)
+        {
+            xLoc = x;
+            yLoc = y;
+        }
+        public int xLoc
+        {
+            get
+            {
+                return this._xLoc;
+            }
+            set
+            {
+                this._xLoc = value;
+            }
+        }
+
+        public int yLoc
+        {
+            get
+            {
+                return this._yLoc;
+            }
+            set
+            {
+                this._yLoc = value;
+            }
+        }
 
         public bool IsSleeping
         {

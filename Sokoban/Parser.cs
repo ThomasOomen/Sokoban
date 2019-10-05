@@ -100,5 +100,11 @@ namespace Sokoban
                 Console.WriteLine();
             }
         }
+
+        //Returnt de begin array voor de objecten te maken.
+        public char[,] getMazeArray()
+        {
+            return mazeCharArray;
+        }
     }
 }

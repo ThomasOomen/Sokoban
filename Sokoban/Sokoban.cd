@@ -31,13 +31,6 @@
       <FileName>Truck.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sokoban.Maze">
-    <Position X="6" Y="10" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAgAABACAAAAAAIAAAEAAABAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Maze.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Sokoban.Floor">
     <Position X="8.75" Y="11.75" Width="1.5" />
     <AssociationLine Name="hasDestination" Type="Sokoban.Destination">
@@ -62,7 +55,7 @@
   <Class Name="Sokoban.Parser">
     <Position X="12.75" Y="1.25" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>gAAAAAAAAAASBAAAAAABgACCAAAAAAQAAAAAAAFAAAI=</HashCode>
+      <HashCode>AABAAIAAAAA6BAAAAABAgACCAAAgAAQAAAAAAgBAAAI=</HashCode>
       <FileName>Parser.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -93,7 +86,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AgAAAAAAEAEAAABAABAAABACAAAAAAQAEAACAAAAIAA=</HashCode>
+      <HashCode>AgAAAAAAEAEIAABAABAAABACAAAAAAQAEAACAAAAIAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -103,7 +96,6 @@
       <Field Name="truck" />
       <Field Name="crate" />
       <Field Name="coworker" />
-      <Field Name="maze" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.InputView">
@@ -182,6 +174,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAASAIAAAAAAAAABAIAAAAAAAAAAAAAA=</HashCode>
       <FileName>MoveableObjects.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.Maze">
+    <Position X="6" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAABACAAAAACIAAAEARgBAABIAAQAAAACAAAAA=</HashCode>
+      <FileName>Maze.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

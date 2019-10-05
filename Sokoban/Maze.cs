@@ -8,6 +8,13 @@ namespace Sokoban
     {
         private int _width;
         private int _height;
+        private Wall _objectWall;
+        private Floor _objectFloor;
+        private Crate _objectCrate;
+        private Destination _objectDestination;
+        private Truck _objectTruck;
+        private DestroyableTile _objectDestroyableTile;
+        private Coworker _objectCoworker;
         private Square[,] _grid { get; set; }
 
         public Square[,] Grid
@@ -45,6 +52,52 @@ namespace Sokoban
             set
             {
                 this._height = value;
+            }
+        }
+
+        internal void createMazeObjects(char character, int x , int y)
+        {
+            string objectChar = Char.ToString(character);
+            switch (objectChar)
+            {
+                case "#": //Muur
+                    _objectWall = new Wall(x, y);
+                    break;
+
+                case ".": //Vloer
+                    _objectFloor = new Floor(x, y);
+                    break;
+
+                case "o": //Krat
+                    _objectCrate = new Crate(x, y);
+                    _objectFloor = new Floor(x, y);
+                    break;
+
+                case "X": //Bestemming
+                    _objectDestination = new Destination(x, y);
+                    break;
+
+                case "@": //Truck
+                    _objectTruck = new Truck(x, y);
+                    _objectFloor = new Floor(x, y);
+                    break;
+
+                case "~": //Valkuil
+                    _objectDestroyableTile = new DestroyableTile(x, y);
+                    break;
+
+                case "$": //Medewerker wakker
+                    _objectCoworker = new Coworker(x, y);
+                    _objectFloor = new Floor(x, y);
+                    break;
+
+                case "Z": //Medewerker slaapt
+                    _objectCoworker = new Coworker(x, y);
+                    _objectFloor = new Floor(x, y);
+                    break;
+                default:
+                    break;
+
             }
         }
     }

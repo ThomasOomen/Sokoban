@@ -6,20 +6,34 @@ namespace Sokoban
 {
     public class Truck : MoveableObjects
     {
-
-        public int PositionX
+        private int _xLoc;
+        private int _yLoc;
+        public Truck(int x, int y)
         {
-            get => default;
+            xLoc = x;
+            yLoc = y;
+        }
+        public int xLoc
+        {
+            get
+            {
+                return this._xLoc;
+            }
             set
             {
+                this._xLoc = value;
             }
         }
 
-        public int PositionY
+        public int yLoc
         {
-            get => default;
+            get
+            {
+                return this._yLoc;
+            }
             set
             {
+                this._yLoc = value;
             }
         }
 

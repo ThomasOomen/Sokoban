@@ -16,6 +16,9 @@ namespace Sokoban
         private Coworker coworker;
         private Maze maze;
 
+        private int _mazeWidth;
+        private int _mazeHeight;
+
         public Game()
         {
             outputView = new OutputView();
@@ -53,63 +56,22 @@ namespace Sokoban
         //geeft nu alleen nog door hoe breedt en hoe hoog het doolhof is. 
         public void InitMaze()
         {
-            maze.Width = parser.calculatetWidthofMaze();
-            maze.Height = parser.calculateHeightofMaze();
-            
+            _mazeHeight =  parser.calculateHeightofMaze();
+            _mazeWidth = parser.calculatetWidthofMaze();
+            maze.Width = _mazeWidth;
+            maze.Height = _mazeHeight;
             parser.createMazeArray();
-            parser.printArray();
-            //idk of die for loop nog klopt
-
-        /*
-            for (int x = 0; x < this.maze.Width; x++)
+            
+            for(int y = 0; y < _mazeHeight; y++)
             {
-                for (int y = 0; y < this.maze.Height; y++)
+                for(int x = 0; x < _mazeWidth; x++)
                 {
-                    string c = this.parser.CharArray[x, y].ToString();
-                    switch (c)
-                    {
-                        case "#": //Muur
-                            this.maze.Grid[x, y] = new Wall();
-                            break;
-
-                        case ".": //Vloer
-                            this.maze.Grid[x, y] = new Floor();
-                            break;
-
-                        case "o": //Krat
-                            this.maze.Grid[x, y] = new Floor();
-                            this.maze.Grid[x, y].MoveObject = new Crate();
-                            break;
-
-                        case "X": //Bestemming
-                            this.maze.Grid[x, y] = new Destination();
-                            break;
-
-                        case "@": //Truck
-                            this.maze.Grid[x, y] = new Floor();
-                            this.maze.Grid[x, y].MoveObject = new Truck();
-                            break;
-
-                        case "~": //Valkuil
-                            this.maze.Grid[x, y] = new DestroyableTile();
-                            break;
-
-                        case "$": //Medewerker wakker
-                            this.maze.Grid[x, y] = new Floor();
-                            this.maze.Grid[x, y].MoveObject = new Coworker();
-                            break;
-
-                        case "Z": //Medewerker slaapt
-                            this.maze.Grid[x, y] = new Floor();
-                            this.maze.Grid[x, y].MoveObject = new Coworker();
-                            break;
-                        default:
-                            break;
-
-                    }
+                    Console.WriteLine("Locatie = " + x + " , " + y);
+                    char character = parser.getMazeArray()[x, y];
+                    Console.WriteLine("Character = " + character);
+                    maze.createMazeObjects(character, x , y);
                 }
-            }
-        */
+            } 
         }
 
         public void exitGame()
