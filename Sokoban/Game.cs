@@ -55,7 +55,12 @@ namespace Sokoban
         {
             maze.Width = parser.calculatetWidthofMaze();
             maze.Height = parser.calculateHeightofMaze();
+            
+            parser.createMazeArray();
+            parser.printArray();
             //idk of die for loop nog klopt
+
+        /*
             for (int x = 0; x < this.maze.Width; x++)
             {
                 for (int y = 0; y < this.maze.Height; y++)
@@ -100,9 +105,11 @@ namespace Sokoban
                             break;
                         default:
                             break;
+
                     }
                 }
             }
+        */
         }
 
         public void exitGame()
