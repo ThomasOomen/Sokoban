@@ -21,6 +21,8 @@ namespace Sokoban
             outputView = new OutputView();
             inputView = new InputView();
             parser = new Parser();
+            maze = new Maze();
+
             startUpGame();
         }
 
@@ -31,10 +33,7 @@ namespace Sokoban
             mazeLevel = inputView.getMazeLevel();
             if (mazeLevel != -100)
             {
-                Console.WriteLine(mazeLevel);
-
                 playGame();
-                
             }
             else
             {
@@ -47,16 +46,19 @@ namespace Sokoban
         public void playGame()
         {
             inputView.AskForInput();
-            parser.FillArray(mazeLevel);
-
-            
+            parser.initMazePath(mazeLevel);
+            InitMaze();
         }
 
+        //geeft nu alleen nog door hoe breedt en hoe hoog het doolhof is. 
         public void InitMaze()
         {
-            for (int x = 0; x < this.maze._width; x++)
+            maze.Width = parser.calculatetWidthofMaze();
+            maze.Height = parser.calculateHeightofMaze();
+            //idk of die for loop nog klopt
+            for (int x = 0; x < this.maze.Width; x++)
             {
-                for (int y = 0; y < this.maze._height; y++)
+                for (int y = 0; y < this.maze.Height; y++)
                 {
                     string c = this.parser.CharArray[x, y].ToString();
                     switch (c)

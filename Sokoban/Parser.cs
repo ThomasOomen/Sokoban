@@ -27,40 +27,22 @@ namespace Sokoban
             }
         }
 
-        public void calculateSize() //Berekent de breedte en hoogte van het doolhof (MOET NOG GETEST WORDEN)
+        //initialeerd het path van de maze. speler moet wel het spel opnieuw opstarten als ie een ander doolhof wilt spelen. 
+        public void initMazePath(int mazeLevel)
         {
-            //this._fileStream = new FileStream(this._path, FileMode.Open, FileAccess.Read);
+            _path = mazeLevel;
             this._streamReader = new StreamReader(@"doolhof" + _path + ".txt");
-            var text = _streamReader.ReadToEnd();
-            Console.WriteLine(text);
-            Console.ReadLine();
-            this._maze._height = 0;
-            this._maze._width = 0;
-
-            String line = _streamReader.ReadLine();
-
-            while (line != null)
-            {
-                this._maze._height++;
-                if (line.Length > this._maze._width)
-                {
-                    this._maze._width = line.Length;
-                }
-                line = _streamReader.ReadLine();
-            }
-            this._charArray = new Char[this._maze._width, this._maze._height];
-
         }
 
-        public void FillArray(int levelNumber) //vult de 2d array met alle tekens per regel
-        {
-            _path = levelNumber;
-            calculateSize();
 
+        //vult de 2d array met alle tekens per regel
+        public void FillArray(int levelNumber) 
+        {
+            calculateSize();
             String line = _streamReader.ReadLine();
             int y = 0;
 
-            while (y < this._maze._height)
+            while (y < this._maze.Height)
             {
                 int x = 0;
                 foreach (Char c in line)
@@ -73,11 +55,19 @@ namespace Sokoban
             }
         }
 
-        public void test()
+        //Leest breed een 1 regel is van het doolhof.(breedte van een regel)
+        public int calculatetWidthofMaze()
         {
-            TextReader tr = new StreamReader(@"doolhof6.txt");
-            string myText = tr.ReadLine();
-            Console.WriteLine(myText + "woop");
+            string widthMaze = this._streamReader.ReadLine();
+            return widthMaze.Length;
+        }
+
+        //leest hoog het doolhof is. (lengte van een colom).
+        public int calculateHeightofMaze()
+        {
+            int heightMaze = File.ReadAllLines(@"doolhof" + _path + ".txt").Length;
+            Console.WriteLine("doolhoof is " + heightMaze + " hoog");
+            return heightMaze;
         }
     }
 }

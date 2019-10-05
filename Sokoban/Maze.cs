@@ -6,7 +6,8 @@ namespace Sokoban
 {
     public class Maze
     {
-
+        private int _width;
+        private int _height;
         private Square[,] _grid { get; set; }
 
         public Square[,] Grid
@@ -20,7 +21,31 @@ namespace Sokoban
                 _grid = value;
             }
         }
-        public int _width { get; set; } //breedte van het doolhof
-        public int _height { get; set; }//hoogte van het doolhof
+
+        //breedte van het doolhof
+        public int Width
+        {
+            get
+            {
+                return this._width;
+            }
+            set
+            {
+                this._width = value;
+            }
+        }
+
+        //hoogte van het doolhof
+        public int Height
+        {
+            get
+            {
+                return this._height;
+            }
+            set
+            {
+                this._height = value;
+            }
+        }
     }
 }

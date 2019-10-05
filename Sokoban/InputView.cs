@@ -50,7 +50,6 @@ namespace Sokoban
             Console.WriteLine("Met 's' kan je stoppen, met 'r' kan je de game resetten");
         }
 
-
         /* 
         Leest input van speler om daarna, returnt daarna een int value, de int value bepaald welke
         richting de speler opgaat.
