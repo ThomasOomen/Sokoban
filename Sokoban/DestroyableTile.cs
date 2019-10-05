@@ -4,7 +4,11 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class DestroyableTile
+    public class DestroyableTile : Square
     {
+        public override bool IsEmpty()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
