@@ -14,6 +14,7 @@ namespace Sokoban
         private Floor _objectFloor;
         private Crate _objectCrate;
         private Destination _objectDestination;
+        private EmptySpace _objectEmptySpace;
         private Truck _objectTruck;
         private DestroyableTile _objectDestroyableTile;
         private Coworker _objectCoworker;
@@ -121,6 +122,10 @@ namespace Sokoban
                     _grid[x, y] = _objectFloor;
                     _grid[x, y].MoveObject = _objectCoworker;
                     break;
+                case " ":
+                    _objectEmptySpace = new EmptySpace(x, y);
+                    _grid[x, y] = _objectEmptySpace;
+                    break;
                 default:
                     break;
 
@@ -184,6 +189,11 @@ namespace Sokoban
         }
 
         public void moveCoWorker()
+        {
+            _objectCoworker.WakeOrSleep();
+        }
+
+        public void GetWakeOrSleep()
         {
             _objectCoworker.WakeOrSleep();
         }

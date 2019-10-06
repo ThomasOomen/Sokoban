@@ -60,18 +60,22 @@ namespace Sokoban
                 switch(input)
                 {
                     case 1:
+                        maze.Grid[maze.getTruck.Xposition, maze.getTruck.Yposition].MoveObject = null;
                         maze.truckDirection(input);
                         break;
 
                     case 2:
+                        maze.Grid[maze.getTruck.Xposition, maze.getTruck.Yposition].MoveObject = null;
                         maze.truckDirection(input);
                         break;
 
                     case 3:
+                        maze.Grid[maze.getTruck.Xposition, maze.getTruck.Yposition].MoveObject = null;
                         maze.truckDirection(input);
                         break;
 
                     case 4:
+                        maze.Grid[maze.getTruck.Xposition, maze.getTruck.Yposition].MoveObject = null;
                         maze.truckDirection(input);
                         break;
 
@@ -134,6 +138,10 @@ namespace Sokoban
                     if (this.maze.Grid[i,j].IsEmpty() && this.maze.Grid[i,j] != null)
                     {
                         this.maze.Grid[i, j].SetDisplayChar();
+                    }
+                    else if (this.maze.Grid[i, j].MoveObject.toChar() == 'Z' || this.maze.Grid[i, j].MoveObject.toChar() == '$')
+                    {
+                        maze.GetWakeOrSleep();
                     }
                 }
             }
