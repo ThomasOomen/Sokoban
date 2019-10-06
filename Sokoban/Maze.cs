@@ -55,31 +55,31 @@ namespace Sokoban
             }
         }
 
-        internal void createMazeObjects(char character, int x , int y)
+        internal void createMazeObjects(Char character, int x , int y)
         {
             string objectChar = Char.ToString(character);
             switch (objectChar)
             {
                 case "#": //Muur
-                    _objectWall = new Wall(character ,x, y);
+                    _objectWall = new Wall(x, y);
                     break;
 
                 case ".": //Vloer
-                    _objectFloor = new Floor(character, x, y);
+                    _objectFloor = new Floor(x, y);
                     break;
 
                 case "o": //Krat
-                    _objectCrate = new Crate(character, x, y);
-                    _objectFloor = new Floor(".", x, y);
+                    _objectCrate = new Crate(x, y);
+                    _objectFloor = new Floor(x, y);
                     break;
 
                 case "X": //Bestemming
-                    _objectDestination = new Destination(character, x, y);
+                    _objectDestination = new Destination( x, y);
                     break;
 
                 case "@": //Truck
-                    _objectTruck = new Truck(character, x, y);
-                    _objectFloor = new Floor(".", x, y);
+                    _objectTruck = new Truck(x, y);
+                    _objectFloor = new Floor(x, y);
                     break;
 
                 case "~": //Valkuil
@@ -88,7 +88,7 @@ namespace Sokoban
 
                 case "$": //Medewerker
                     _objectCoworker = new Coworker(x, y);
-                    _objectFloor = new Floor(".", x, y);
+                    _objectFloor = new Floor(x, y);
                     break;
                 default:
                     break;

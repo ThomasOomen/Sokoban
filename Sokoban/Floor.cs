@@ -8,13 +8,15 @@ namespace Sokoban
     {
         private Destination hasDestination;
         private DestroyableTile isDestroyable;
+        private Char displayChar;
 
         private int _xLoc;
         private int _yLoc;
-        public Floor(char c, int x, int y)
+        public Floor(int x, int y)
         {
             xLoc = x;
             yLoc = y;
+            displayChar = '.';
         }
         public int xLoc
         {
@@ -40,9 +42,22 @@ namespace Sokoban
             }
         }
 
-        public override bool IsEmpty()
+        public void SetDisplayChar()
         {
-            throw new NotImplementedException();
+            if (this.IsEmpty())
+            {
+                displayChar = '.';
+            }
+            else
+            {
+                switch (this.MoveObject)
+                {
+                    case Crate:
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Sokoban
     {
         private int _xLoc;
         private int _yLoc;
-        public Destination(char c, int x, int y)
+        public Destination(int x, int y)
         {
             xLoc = x;
             yLoc = y;
