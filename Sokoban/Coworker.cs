@@ -60,6 +60,9 @@ namespace Sokoban
                 if (randomValue99 < wakePercentage)
                 {
                     _isSleeping = false;
+                    Random rDirection = new Random();
+                    int direction = r.Next(4);
+                    move(direction);
                 }
             }
             else
@@ -70,37 +73,28 @@ namespace Sokoban
                 {
                     _isSleeping = true;
                 }
-            }
+            } 
         }
-        public override void move() //als de coworker wakker is gaat hij een willekeurige kant op
-        {
-            if (_isSleeping)
-            {
-                WakeOrSleep();
-            }
-            else
-            {
-                WakeOrSleep();
-                Random r = new Random();
-                int direction = r.Next(4);
 
-                switch (direction)
-                {
-                    case 0:
-                        this.Xposition--;
-                        break;
-                    case 1:
-                        this.Xposition++;
-                        break;
-                    case 2:
-                        this.Yposition--;
-                        break;
-                    case 3:
-                        this.Yposition++;
-                        break;
-                    default:
-                        break;
-                }
+        //als de coworker wakker is gaat hij een willekeurige kant op
+        public override void move(int direction) 
+        {      
+            switch (direction)
+            {
+                case 0:
+                    this.Xposition--;
+                    break;
+                case 1:
+                    this.Xposition++;
+                    break;
+                case 2:
+                    this.Yposition--;
+                    break;
+                case 3:
+                    this.Yposition++;
+                    break;
+                default:
+                    break;
             }
         }
 

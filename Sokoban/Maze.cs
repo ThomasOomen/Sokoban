@@ -96,16 +96,23 @@ namespace Sokoban
             }
         }
 
+        //Test code
         internal void getTruckLocation()
         {
-            Console.WriteLine("truck heeft x locatie: " + _objectTruck.xLoc);
-            Console.WriteLine("truck heeft y locatie: " + _objectTruck.yLoc);
+            Console.WriteLine("truck heeft x locatie: " + _objectTruck.Xposition);
+            Console.WriteLine("truck heeft y locatie: " + _objectTruck.Yposition);
 
         }
 
-        internal void truckDirection(int direction)
+        //stuurt de richting van de player input door.
+        public void truckDirection(int direction)
         {
             _objectTruck.move(direction);
+        }
+
+        public void moveCoWorker()
+        {
+            _objectCoworker.WakeOrSleep();
         }
     }
 }
