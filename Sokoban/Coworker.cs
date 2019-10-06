@@ -98,6 +98,11 @@ namespace Sokoban
             }
         }
 
+        public override void moveTruck(int direction)
+        {
+            throw new NotImplementedException();
+        }
+
         public override char toChar()
         {
             if (IsSleeping)

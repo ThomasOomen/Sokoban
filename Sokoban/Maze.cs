@@ -57,6 +57,24 @@ namespace Sokoban
             }
         }
 
+        //truck opvragen
+        public Truck getTruck
+        {
+            get
+            {
+                return this._objectTruck;
+            }
+            set
+            {
+                this._objectTruck = value;
+            }
+        }
+
+        public void SetGrid()
+        {
+            _grid = new Square[_width, _height];
+        }
+
         internal void createMazeObjects(Char character, int x , int y)
         {
             string objectChar = Char.ToString(character);
@@ -64,36 +82,44 @@ namespace Sokoban
             {
                 case "#": //Muur
                     _objectWall = new Wall(x, y);
-                    Console.WriteLine(_grid[x, y]);
+                    _grid[x, y] = _objectWall;
                     break;
 
                 case ".": //Vloer
                     _objectFloor = new Floor(x, y);
                     _grid[x, y] = _objectFloor;
-                    Console.WriteLine(_grid[x, y] + " is gevuld met vloer" );
                     break;
 
                 case "o": //Krat
                     _objectCrate = new Crate(x, y);
                     _objectFloor = new Floor(x, y);
+                    _grid[x, y] = _objectFloor;
+                    _grid[x, y].MoveObject = _objectCrate;
+
                     break;
 
-                case "X": //Bestemming
+                case "x": //Bestemming
                     _objectDestination = new Destination(x, y);
+                    _grid[x, y] = _objectDestination;
                     break;
 
                 case "@": //Truck
                     _objectTruck = new Truck(x, y);
                     _objectFloor = new Floor(x, y);
+                    _grid[x, y] = _objectFloor;
+                    _grid[x, y].MoveObject = _objectTruck;
                     break;
 
                 case "~": //Valkuil
                     _objectDestroyableTile = new DestroyableTile(x, y);
+                    _grid[x, y] = _objectDestroyableTile;
                     break;
 
                 case "$": //Medewerker
                     _objectCoworker = new Coworker(x, y);
                     _objectFloor = new Floor(x, y);
+                    _grid[x, y] = _objectFloor;
+                    _grid[x, y].MoveObject = _objectCoworker;
                     break;
                 default:
                     break;
@@ -138,6 +164,19 @@ namespace Sokoban
                     break;
             }
             _objectTruck.move(direction);
+            _objectTruck.moveTruck(direction);
+        }
+
+        public void printArray()
+        {
+            for (int j = 0; j < _height; j++)
+            {
+                for (int i = 0; i < _width; i++)
+                {
+                    Console.Write(_grid[i, j].DisplayChar);
+                }
+                Console.WriteLine();
+            }
         }
 
         private void checkColision()

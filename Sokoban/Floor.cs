@@ -7,15 +7,16 @@ namespace Sokoban
     public class Floor : Square
     {
 
-        private Char _displayChar;
         private int _xLoc;
         private int _yLoc;
         public Floor(int x, int y)
         {
             xLoc = x;
             yLoc = y;
-            SetDisplayChar();
+            this.DisplayChar = SetDisplayChar();
         }
+
+
         public int xLoc
         {
             get
@@ -40,11 +41,11 @@ namespace Sokoban
             }
         }
 
-        public void SetDisplayChar()
+        public override Char SetDisplayChar()
         {
             if (this.IsEmpty())
             {
-                _displayChar = '.';
+               return '.';
             }
             else
             {
@@ -52,19 +53,20 @@ namespace Sokoban
                 switch (c)
                 {
                     case 'o':
-                        _displayChar = 'o';
-                        break;
+                        return 'o';
+
                     case '@':
-                        _displayChar = '@';
-                        break;
+                        return '@';
+
                     case 'Z':
-                        _displayChar = 'Z';
-                        break;
+                        return 'Z';
+
                     case '$':
-                        _displayChar = '$';
-                        break;
+                        return '$';
+
                     default:
-                        break;
+                        return '.';
+
                 }
 
             }

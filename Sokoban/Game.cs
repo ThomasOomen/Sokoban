@@ -11,9 +11,6 @@ namespace Sokoban
         private InputView inputView;
         private OutputView outputView;
         private Parser parser;
-        private Truck truck;
-        private Crate crate;
-        private Coworker coworker;
         private Maze maze;
 
         private int _mazeWidth;
@@ -88,6 +85,7 @@ namespace Sokoban
                 }
 
                 maze.getTruckLocation();
+                update();
             }
 
 
@@ -102,6 +100,7 @@ namespace Sokoban
             
             parser.createMazeArray();
             parser.printArray();
+            maze.SetGrid();
 
             for (int y = 0; y < _mazeHeight; y++)
             {
@@ -123,6 +122,22 @@ namespace Sokoban
         public void exitGame()
         {
             Environment.Exit(0);
+        }
+
+        public void update()
+        {
+            this.maze.Grid[this.maze.getTruck.Xposition, this.maze.getTruck.Yposition].MoveObject = this.maze.getTruck;
+            for (int i = 0; i < this._mazeWidth; i++)
+            {
+                for (int j = 0; j < this._mazeHeight; j++)
+                {
+                    if (this.maze.Grid[i,j].IsEmpty() && this.maze.Grid[i,j] != null)
+                    {
+                        this.maze.Grid[i, j].SetDisplayChar();
+                    }
+                }
+            }
+            maze.printArray();
         }
     }
 }

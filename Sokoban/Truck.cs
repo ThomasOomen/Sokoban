@@ -36,9 +36,6 @@ namespace Sokoban
             }
         }
 
-        //Verplaatsen van truck
-       
-
         public override char toChar()
         {
             return '@';

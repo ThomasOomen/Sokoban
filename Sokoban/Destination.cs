@@ -6,14 +6,17 @@ namespace Sokoban
 {
     public class Destination : Square
     {
-        private Char _displayChar;
         private int _xLoc;
         private int _yLoc;
         public Destination(int x, int y)
         {
             xLoc = x;
             yLoc = y;
+            this.DisplayChar = SetDisplayChar();
         }
+
+
+
         public int xLoc
         {
             get
@@ -42,11 +45,11 @@ namespace Sokoban
             throw new System.NotImplementedException();
         }
 
-        public void SetDisplayChar()
+        public override Char SetDisplayChar()
         {
             if (this.IsEmpty())
             {
-                _displayChar = 'X';
+                return 'x';
             }
             else
             {
@@ -54,19 +57,20 @@ namespace Sokoban
                 switch (c)
                 {
                     case 'o':
-                        _displayChar = 'o';
-                        break;
+                        return 'o';
+
                     case '@':
-                        _displayChar = '@';
-                        break;
+                        return '@';
+
                     case 'Z':
-                        _displayChar = 'Z';
-                        break;
+                        return 'Z';
+
                     case '$':
-                        _displayChar = '$';
-                        break;
+                        return '$';
+
                     default:
-                        break;
+                        return 'x';
+
                 }
 
             }

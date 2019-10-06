@@ -6,11 +6,24 @@ namespace Sokoban
 {
     public abstract class Square
     {
+        private Char _DisplayChar { get; set; }
         private int _Xposition { get; set; }
         private int _Yposition { get; set; }
 
         private MoveableObjects _MoveObject { get; set; }
 
+
+        public Char DisplayChar
+        {
+            get
+            {
+                return _DisplayChar;
+            }
+            set
+            {
+                _DisplayChar = value;
+            }
+        }
         public int Xposition
         {
             get
@@ -59,6 +72,8 @@ namespace Sokoban
                 return false;
             }
         }
+
+        public abstract Char SetDisplayChar();
 
         public int SquareInDirection(Direction direction)
         {
