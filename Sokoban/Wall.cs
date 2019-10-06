@@ -6,13 +6,18 @@ namespace Sokoban
 {
     public class Wall : Square
     {
+
         private int _xLoc;
         private int _yLoc;
         public Wall(int x, int y)
         {
             xLoc = x;
             yLoc = y;
+            this.DisplayChar = SetDisplayChar();
+
         }
+
+
         public int xLoc
         {
             get
@@ -41,11 +46,9 @@ namespace Sokoban
             throw new System.NotImplementedException();
         }
 
-        public override bool IsEmpty()
+        public override char SetDisplayChar()
         {
-            throw new NotImplementedException();
+            return '#';
         }
-
-
     }
 }

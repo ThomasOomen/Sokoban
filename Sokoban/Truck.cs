@@ -16,7 +16,7 @@ namespace Sokoban
 
         public override void move()
         {
-            throw new NotImplementedException(););
+            throw new NotImplementedException();
         }
 
         //Verplaatsen van truck

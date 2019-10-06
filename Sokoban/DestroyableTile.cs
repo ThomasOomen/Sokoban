@@ -6,13 +6,17 @@ namespace Sokoban
 {
     public class DestroyableTile : Square
     {
+
         private int _xLoc;
         private int _yLoc;
         public DestroyableTile(int x, int y)
         {
             xLoc = x;
             yLoc = y;
+            this.DisplayChar = SetDisplayChar();
         }
+
+
         public int xLoc
         {
             get
@@ -36,9 +40,36 @@ namespace Sokoban
                 this._yLoc = value;
             }
         }
-        public override bool IsEmpty()
+
+        public override Char SetDisplayChar()
         {
-            throw new NotImplementedException();
+            if (this.IsEmpty())
+            {
+                return '~';
+            }
+            else
+            {
+                char c = this.MoveObject.toChar();
+                switch (c)
+                {
+                    case 'o':
+                       return 'o';
+                        break;
+                    case '@':
+                        return '@';
+                        break;
+                    case 'Z':
+                        return 'Z';
+                        break;
+                    case '$':
+                       return '$';
+                        break;
+                    default:
+                        return '~';
+                        break;
+                }
+
+            }
         }
     }
 }
