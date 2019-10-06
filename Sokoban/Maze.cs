@@ -6,6 +6,8 @@ namespace Sokoban
 {
     public class Maze
     {
+        private int _tempXlocTruck;
+        private int _tempYlocTruck;
         private int _width;
         private int _height;
         private Wall _objectWall;
@@ -62,10 +64,13 @@ namespace Sokoban
             {
                 case "#": //Muur
                     _objectWall = new Wall(x, y);
+                    Console.WriteLine(_grid[x, y]);
                     break;
 
                 case ".": //Vloer
                     _objectFloor = new Floor(x, y);
+                    _grid[x, y] = _objectFloor;
+                    Console.WriteLine(_grid[x, y] + " is gevuld met vloer" );
                     break;
 
                 case "o": //Krat
@@ -107,7 +112,37 @@ namespace Sokoban
         //stuurt de richting van de player input door.
         public void truckDirection(int direction)
         {
+            _tempXlocTruck = _objectTruck.Xposition;
+            _tempYlocTruck = _objectTruck.Yposition;
+
+            switch (direction)
+            {
+                case 1:
+                    _tempXlocTruck--;
+                    checkColision();
+                    break;
+
+                case 2:
+                    _tempYlocTruck--;
+                    checkColision();
+                    break;
+
+                case 3:
+                    _tempXlocTruck++;
+                    checkColision();
+                    break;
+
+                case 4:
+                    _tempYlocTruck++;
+                    checkColision();
+                    break;
+            }
             _objectTruck.move(direction);
+        }
+
+        private void checkColision()
+        {
+            
         }
 
         public void moveCoWorker()
