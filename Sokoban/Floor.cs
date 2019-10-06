@@ -11,7 +11,7 @@ namespace Sokoban
 
         private int _xLoc;
         private int _yLoc;
-        public Floor(int x, int y)
+        public Floor(char c, int x, int y)
         {
             xLoc = x;
             yLoc = y;

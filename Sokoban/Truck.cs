@@ -8,7 +8,7 @@ namespace Sokoban
     {
         private int _xLoc;
         private int _yLoc;
-        public Truck(int x, int y)
+        public Truck(char c, int x, int y)
         {
             xLoc = x;
             yLoc = y;

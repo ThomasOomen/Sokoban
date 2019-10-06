@@ -53,22 +53,21 @@ namespace Sokoban
             InitMaze();
         }
 
-        //geeft nu alleen nog door hoe breedt en hoe hoog het doolhof is. 
         public void InitMaze()
         {
             _mazeHeight =  parser.calculateHeightofMaze();
             _mazeWidth = parser.calculatetWidthofMaze();
             maze.Width = _mazeWidth;
             maze.Height = _mazeHeight;
-            parser.createMazeArray();
             
-            for(int y = 0; y < _mazeHeight; y++)
+            parser.createMazeArray();
+            parser.printArray();
+
+            for (int y = 0; y < _mazeHeight; y++)
             {
                 for(int x = 0; x < _mazeWidth; x++)
-                {
-                    Console.WriteLine("Locatie = " + x + " , " + y);
+                { 
                     char character = parser.getMazeArray()[x, y];
-                    Console.WriteLine("Character = " + character);
                     maze.createMazeObjects(character, x , y);
                 }
             } 

@@ -61,39 +61,34 @@ namespace Sokoban
             switch (objectChar)
             {
                 case "#": //Muur
-                    _objectWall = new Wall(x, y);
+                    _objectWall = new Wall(character ,x, y);
                     break;
 
                 case ".": //Vloer
-                    _objectFloor = new Floor(x, y);
+                    _objectFloor = new Floor(character, x, y);
                     break;
 
                 case "o": //Krat
-                    _objectCrate = new Crate(x, y);
-                    _objectFloor = new Floor(x, y);
+                    _objectCrate = new Crate(character, x, y);
+                    _objectFloor = new Floor(".", x, y);
                     break;
 
                 case "X": //Bestemming
-                    _objectDestination = new Destination(x, y);
+                    _objectDestination = new Destination(character, x, y);
                     break;
 
                 case "@": //Truck
-                    _objectTruck = new Truck(x, y);
-                    _objectFloor = new Floor(x, y);
+                    _objectTruck = new Truck(character, x, y);
+                    _objectFloor = new Floor(".", x, y);
                     break;
 
                 case "~": //Valkuil
                     _objectDestroyableTile = new DestroyableTile(x, y);
                     break;
 
-                case "$": //Medewerker wakker
+                case "$": //Medewerker
                     _objectCoworker = new Coworker(x, y);
-                    _objectFloor = new Floor(x, y);
-                    break;
-
-                case "Z": //Medewerker slaapt
-                    _objectCoworker = new Coworker(x, y);
-                    _objectFloor = new Floor(x, y);
+                    _objectFloor = new Floor(".", x, y);
                     break;
                 default:
                     break;

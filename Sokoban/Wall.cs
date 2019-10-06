@@ -8,7 +8,7 @@ namespace Sokoban
     {
         private int _xLoc;
         private int _yLoc;
-        public Wall(int x, int y)
+        public Wall(char c, int x, int y)
         {
             xLoc = x;
             yLoc = y;
