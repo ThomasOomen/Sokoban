@@ -172,7 +172,7 @@ namespace Sokoban
             {
                 for (int i = 0; i < _width; i++)
                 {
-                    Console.Write(_grid[i, j].DisplayChar);
+                    Console.Write(_grid[i, j].SetDisplayChar());
                 }
                 Console.WriteLine();
             }
