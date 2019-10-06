@@ -36,7 +36,7 @@ namespace Sokoban
                 this._yLoc = value;
             }
         }
-        public override void move()
+        public override void move(int x)
         {
             throw new NotImplementedException();
         }

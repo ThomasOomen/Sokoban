@@ -51,6 +51,46 @@ namespace Sokoban
             inputView.AskForInput();
             parser.initMazePath(mazeLevel);
             InitMaze();
+            mainGameLoop();
+        }
+
+        public void mainGameLoop()
+        {
+            Console.WriteLine("woop");
+            while(true)
+            {
+                int input = inputView.ReadInputKey();
+                switch(input)
+                {
+                    case 1:
+                        maze.truckDirection(input);
+                        break;
+
+                    case 2:
+                        maze.truckDirection(input);
+                        break;
+
+                    case 3:
+                        maze.truckDirection(input);
+                        break;
+
+                    case 4:
+                        maze.truckDirection(input);
+                        break;
+
+                    case -101:
+                        resetGame();
+                        break;
+
+                    case -102:
+                        exitGame();
+                        break;
+                }
+
+                maze.getTruckLocation();
+            }
+
+
         }
 
         public void InitMaze()
@@ -73,6 +113,13 @@ namespace Sokoban
             } 
         }
 
+        //Reset het spel (niet geimplementeerd)
+        public void resetGame()
+        {
+            Console.WriteLine("Reset game");
+        }
+
+        //Sluit de game.
         public void exitGame()
         {
             Environment.Exit(0);

@@ -87,25 +87,18 @@ namespace Sokoban
             switch (playerInput)
             {
                 case ConsoleKey.LeftArrow:
-                    Console.WriteLine("Links in ingedrukt");
                     return 1;
                 case ConsoleKey.UpArrow:
-                    Console.WriteLine("Omhoog in ingedrukt");
                     return 2;
                 case ConsoleKey.RightArrow:
-                    Console.WriteLine("Rechts in ingedrukt");
                     return 3;
                 case ConsoleKey.DownArrow:
-                    Console.WriteLine("Omlaag in ingedrukt");
                     return 4;
                 case ConsoleKey.R:
-                    Console.WriteLine("Reset in ingedrukt");
                     return -101;
                 case ConsoleKey.S:
-                    Console.WriteLine("Stop in ingedrukt");
                     return -102;
                 default:
-                    Console.WriteLine("Die ken ik niet");
                     return 100000;
             }
 

@@ -37,9 +37,31 @@ namespace Sokoban
             }
         }
 
-        public override void move()
+        //Verplaatsen van truck
+        public override void move(int direction)
         {
-            throw new NotImplementedException();
+            switch (direction)
+            {
+                case 1:
+                    Console.WriteLine("truck naar links");
+                    xLoc = _xLoc - 1;
+                    break;
+
+                case 2:
+                    Console.WriteLine("truck naar omhoog");
+                    yLoc = _yLoc - 1;
+                    break;
+
+                case 3:
+                    xLoc = _xLoc + 1;
+                    Console.WriteLine("truck naar rechts");
+                    break;
+
+                case 4:
+                    yLoc = _yLoc + 1;
+                    Console.WriteLine("truck naar omlaag");
+                    break;
+            }
         }
     }
 }

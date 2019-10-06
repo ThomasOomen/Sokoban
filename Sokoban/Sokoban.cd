@@ -6,19 +6,19 @@
   <Class Name="Sokoban.Destination">
     <Position X="14.75" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <HashCode>AABAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAARAAEAIAA=</HashCode>
       <FileName>Destination.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Wall">
     <Position X="6" Y="11.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAAARAAAAIAA=</HashCode>
       <FileName>Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Square">
-    <Position X="6" Y="14.5" Width="1.5" />
+    <Position X="8.75" Y="15.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABACAAAAAAAAAQAIAAAAAAAAABAIAAAABAIAAAAAAA=</HashCode>
       <FileName>Square.cs</FileName>
@@ -27,7 +27,7 @@
   <Class Name="Sokoban.Truck">
     <Position X="10.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAIAAAAAACAAAAAAAAAAAAAAAAAAAARAAAAIAA=</HashCode>
       <FileName>Truck.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -44,7 +44,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAIAAAAAAAAAAAAAAAgAAAAAAAAgAARAAAAIAA=</HashCode>
       <FileName>Floor.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -63,8 +63,8 @@
     <Position X="6" Y="5" Width="1.5" />
     <AssociationLine Name="truck" Type="Sokoban.Truck" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.5" Y="5.875" />
-        <Point X="11.562" Y="5.875" />
+        <Point X="7.5" Y="5.824" />
+        <Point X="11.562" Y="5.824" />
         <Point X="11.562" Y="6.5" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
@@ -73,20 +73,22 @@
     </AssociationLine>
     <AssociationLine Name="crate" Type="Sokoban.Crate" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.5" Y="6.125" />
-        <Point X="9.375" Y="6.125" />
+        <Point X="7.5" Y="6.059" />
+        <Point X="9.375" Y="6.059" />
         <Point X="9.375" Y="6.5" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="coworker" Type="Sokoban.Coworker" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.5" Y="5.625" />
-        <Point X="13.5" Y="5.625" />
+        <Point X="7.5" Y="5.588" />
+        <Point X="12.5" Y="5.588" />
+        <Point X="12.5" Y="6.199" />
+        <Point X="13.5" Y="6.199" />
         <Point X="13.5" Y="6.5" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AgAAAAAAEAEIAABAABAAABACAAAAAAQAEAACAAAAIAA=</HashCode>
+      <HashCode>AgAAAAAAEAEIAABAABABABACAAAAAAYAEAACAAAAIAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -96,6 +98,7 @@
       <Field Name="truck" />
       <Field Name="crate" />
       <Field Name="coworker" />
+      <Field Name="maze" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.InputView">
@@ -114,42 +117,22 @@
   </Class>
   <Class Name="Sokoban.Crate">
     <Position X="8.75" Y="6.5" Width="1.5" />
-    <InheritanceLine Type="Sokoban.MoveableObjects" ManuallyRouted="true">
-      <Path>
-        <Point X="18" Y="9" />
-        <Point X="18" Y="8.625" />
-        <Point X="15.632" Y="8.625" />
-        <Point X="15.632" Y="9.078" />
-        <Point X="9.5" Y="9.078" />
-        <Point X="9.5" Y="7.733" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAIAAAAAACAAAAAAAAAAAAAAAAAAAARAAAAIAA=</HashCode>
       <FileName>Crate.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Coworker">
     <Position X="12.75" Y="6.5" Width="1.5" />
-    <InheritanceLine Type="Sokoban.MoveableObjects" ManuallyRouted="true" FixedFromPoint="true">
-      <Path>
-        <Point X="18" Y="9" />
-        <Point X="18" Y="8.625" />
-        <Point X="15.61" Y="8.625" />
-        <Point X="15.61" Y="9.078" />
-        <Point X="13.5" Y="9.078" />
-        <Point X="13.5" Y="8.828" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>gAAQAAAAAAAAAACAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <HashCode>gAAQAAAIAAAAAACAAAAAAAAAAAAAACAAAAARAAAAIAA=</HashCode>
       <FileName>Coworker.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.DestroyableTile">
     <Position X="11.75" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAARAAAAIAA=</HashCode>
       <FileName>DestroyableTile.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -177,7 +160,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Maze">
-    <Position X="6" Y="10" Width="1.5" />
+    <Position X="3" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAABACAAAAACIAAAEARgBAABIAAQAAAACAAAAA=</HashCode>
       <FileName>Maze.cs</FileName>
