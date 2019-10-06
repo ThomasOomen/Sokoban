@@ -55,7 +55,7 @@ namespace Sokoban
             }
         }
 
-        internal void createMazeObjects(char character, int x , int y)
+        internal void createMazeObjects(Char character, int x , int y)
         {
             string objectChar = Char.ToString(character);
             switch (objectChar)
