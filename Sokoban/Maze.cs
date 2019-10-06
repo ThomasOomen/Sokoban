@@ -125,6 +125,7 @@ namespace Sokoban
             }
         }
 
+        //Test code
         internal void getTruckLocation()
         {
             Console.WriteLine("truck heeft x locatie: " + _objectTruck.Xposition);
@@ -132,7 +133,8 @@ namespace Sokoban
 
         }
 
-        internal void truckDirection(int direction)
+        //stuurt de richting van de player input door.
+        public void truckDirection(int direction)
         {
             _objectTruck.moveTruck(direction);
         }
@@ -147,6 +149,11 @@ namespace Sokoban
                 }
                 Console.WriteLine();
             }
+        }
+
+        public void moveCoWorker()
+        {
+            _objectCoworker.WakeOrSleep();
         }
     }
 }

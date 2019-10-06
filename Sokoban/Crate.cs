@@ -37,16 +37,10 @@ namespace Sokoban
             }
         }
 
-        public override void move()
+        public override void move(int direction)
         {
             throw new NotImplementedException();
         }
-
-        public override void moveTruck(int direction)
-        {
-            throw new NotImplementedException();
-        }
-
 
         public override char toChar()
         {

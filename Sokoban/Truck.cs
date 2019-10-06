@@ -14,13 +14,7 @@ namespace Sokoban
             Yposition = y;
         }
 
-        public override void move()
-        {
-            throw new NotImplementedException();
-        }
-
-        //Verplaatsen van truck
-        public override void moveTruck(int direction)
+        public override void move(int direction)
         {
             switch (direction)
             {
