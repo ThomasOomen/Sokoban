@@ -17,6 +17,7 @@ namespace Sokoban
         private Truck _objectTruck;
         private DestroyableTile _objectDestroyableTile;
         private Coworker _objectCoworker;
+
         private Square[,] _grid { get; set; }
 
         public Square[,] Grid
@@ -95,7 +96,6 @@ namespace Sokoban
                     _objectFloor = new Floor(x, y);
                     _grid[x, y] = _objectFloor;
                     _grid[x, y].MoveObject = _objectCrate;
-
                     break;
 
                 case "x": //Bestemming
@@ -144,23 +144,21 @@ namespace Sokoban
             switch (direction)
             {
                 case 1:
-                    _tempXlocTruck--;
-                    checkColision();
+                    checkColision(_tempXlocTruck--, _tempYlocTruck);
                     break;
 
                 case 2:
-                    _tempYlocTruck--;
-                    checkColision();
+                    checkColision(_tempXlocTruck, _tempYlocTruck--);
                     break;
 
                 case 3:
                     _tempXlocTruck++;
-                    checkColision();
+                    checkColision(_tempXlocTruck++, _tempYlocTruck);
                     break;
 
                 case 4:
                     _tempYlocTruck++;
-                    checkColision();
+                    checkColision(_tempXlocTruck, _tempYlocTruck++);
                     break;
             }
             _objectTruck.move(direction);
@@ -178,9 +176,14 @@ namespace Sokoban
             }
         }
 
-        private void checkColision()
+        private void checkColision(int xloc, int yloc)
         {
-            
+            Console.WriteLine("Truck staat op x locatie: " + _objectTruck.Xposition);
+            Console.WriteLine("Truck staat op y locatie: " + _objectTruck.Yposition);
+
+            Console.WriteLine("Truck staat op x locatie: " + xloc + "local var");
+            Console.WriteLine("Truck staat op y locatie: " + yloc + "local var");
+            Console.WriteLine(_grid[xloc, yloc]);
         }
 
         public void moveCoWorker()
