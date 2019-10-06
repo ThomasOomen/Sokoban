@@ -32,9 +32,12 @@ namespace Sokoban
                 _Yposition = value;
             }
         }
+
         public abstract void move();
 
         public abstract void moveTruck(int direction);
+
+        public abstract Char toChar();
 
     }
 }

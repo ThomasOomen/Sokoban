@@ -41,5 +41,10 @@ namespace Sokoban
                     break;
             }
         }
+
+        public override char toChar()
+        {
+            return '@';
+        }
     }
 }

@@ -6,6 +6,7 @@ namespace Sokoban
 {
     public class Destination : Square
     {
+        private Char _displayChar;
         private int _xLoc;
         private int _yLoc;
         public Destination(int x, int y)
@@ -41,9 +42,34 @@ namespace Sokoban
             throw new System.NotImplementedException();
         }
 
-        public override bool IsEmpty()
+        public void SetDisplayChar()
         {
-            throw new NotImplementedException();
+            if (this.IsEmpty())
+            {
+                _displayChar = 'X';
+            }
+            else
+            {
+                char c = this.MoveObject.toChar();
+                switch (c)
+                {
+                    case 'o':
+                        _displayChar = 'o';
+                        break;
+                    case '@':
+                        _displayChar = '@';
+                        break;
+                    case 'Z':
+                        _displayChar = 'Z';
+                        break;
+                    case '$':
+                        _displayChar = '$';
+                        break;
+                    default:
+                        break;
+                }
+
+            }
         }
     }
 }

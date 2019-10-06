@@ -103,5 +103,17 @@ namespace Sokoban
                 }
             }
         }
+
+        public override char toChar()
+        {
+            if (IsSleeping)
+            {
+                return 'Z';
+            }
+            else
+            {
+                return '$';
+            }
+        }
     }
 }
