@@ -72,7 +72,7 @@ namespace Sokoban
                 }
             }
         }
-        public override void move(int x) //als de coworker wakker is gaat hij een willekeurige kant op
+        public override void move() //als de coworker wakker is gaat hij een willekeurige kant op
         {
             if (_isSleeping)
             {

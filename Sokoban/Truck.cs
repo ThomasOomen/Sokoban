@@ -10,56 +10,34 @@ namespace Sokoban
         private int _yLoc;
         public Truck(int x, int y)
         {
-            xLoc = x;
-            yLoc = y;
-        }
-        public int xLoc
-        {
-            get
-            {
-                return this._xLoc;
-            }
-            set
-            {
-                this._xLoc = value;
-            }
+            Xposition = x;
+            Yposition = y;
         }
 
-        public int yLoc
+        public override void move()
         {
-            get
-            {
-                return this._yLoc;
-            }
-            set
-            {
-                this._yLoc = value;
-            }
+            throw new NotImplementedException(););
         }
 
         //Verplaatsen van truck
-        public override void move(int direction)
+        public override void moveTruck(int direction)
         {
             switch (direction)
             {
                 case 1:
-                    Console.WriteLine("truck naar links");
-                    xLoc = _xLoc - 1;
+                    Xposition--;
                     break;
 
                 case 2:
-                    Console.WriteLine("truck naar omhoog");
-                    yLoc = _yLoc - 1;
+                    Yposition--;
                     break;
 
                 case 3:
-                    xLoc = _xLoc + 1;
-                    Console.WriteLine("truck naar rechts");
+                    Xposition++;
                     break;
 
                 case 4:
-                    yLoc = _yLoc + 1;
-                    Console.WriteLine("truck naar omlaag");
+                    Yposition++;
                     break;
             }
         }
