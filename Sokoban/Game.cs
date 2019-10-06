@@ -7,14 +7,10 @@ namespace Sokoban
     public class Game
     {
         private int mazeLevel = 0;
-        
-        private InputView inputView;
-        private OutputView outputView;
-        private Parser parser;
-        private Maze maze;
-
-        private int _mazeWidth;
-        private int _mazeHeight;
+        private readonly InputView inputView;
+        private readonly OutputView outputView;
+        private readonly Parser parser;
+        private readonly Maze maze;
 
         public Game()
         {
@@ -35,12 +31,6 @@ namespace Sokoban
             {
                 playGame();
             }
-            else
-            {
-
-            }
-            
-            
         }
 
         public void playGame()
@@ -53,7 +43,6 @@ namespace Sokoban
 
         public void mainGameLoop()
         {
-            Console.WriteLine("woop");
             while(true)
             {
                 int input = inputView.ReadInputKey();
@@ -87,8 +76,6 @@ namespace Sokoban
                         exitGame();
                         break;
                 }
-
-                maze.getTruckLocation();
                 update();
             }
 
@@ -97,18 +84,16 @@ namespace Sokoban
 
         public void InitMaze()
         {
-            _mazeHeight =  parser.calculateHeightofMaze();
-            _mazeWidth = parser.calculatetWidthofMaze();
-            maze.Width = _mazeWidth;
-            maze.Height = _mazeHeight;
+            maze.Width = parser.calculatetWidthofMaze();
+            maze.Height = parser.calculateHeightofMaze();
             
             parser.createMazeArray();
             parser.printArray();
             maze.SetGrid();
 
-            for (int y = 0; y < _mazeHeight; y++)
+            for (int y = 0; y < maze.Height; y++)
             {
-                for(int x = 0; x < _mazeWidth; x++)
+                for(int x = 0; x <maze.Width; x++)
                 { 
                     char character = parser.getMazeArray()[x, y];
                     maze.createMazeObjects(character, x , y);
@@ -131,9 +116,9 @@ namespace Sokoban
         public void update()
         {
             this.maze.Grid[this.maze.getTruck.Xposition, this.maze.getTruck.Yposition].MoveObject = this.maze.getTruck;
-            for (int i = 0; i < this._mazeWidth; i++)
+            for (int i = 0; i < this.maze.Width; i++)
             {
-                for (int j = 0; j < this._mazeHeight; j++)
+                for (int j = 0; j < this.maze.Height; j++)
                 {
                     if (this.maze.Grid[i,j].IsEmpty() && this.maze.Grid[i,j] != null)
                     {
@@ -145,6 +130,7 @@ namespace Sokoban
                     }
                 }
             }
+            Console.Clear();
             maze.printArray();
         }
     }

@@ -6,8 +6,6 @@ namespace Sokoban
 {
     public class Truck : MoveableObjects
     {
-        private int _xLoc;
-        private int _yLoc;
         public Truck(int x, int y)
         {
             Xposition = x;

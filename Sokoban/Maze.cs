@@ -149,24 +149,54 @@ namespace Sokoban
             switch (direction)
             {
                 case 1:
-                    checkColision(_tempXlocTruck--, _tempYlocTruck);
+                    _tempXlocTruck--;
+                    if (checkColision(_tempXlocTruck, _tempYlocTruck, 1))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        _objectTruck.move(direction);
+                    }
                     break;
 
                 case 2:
-                    checkColision(_tempXlocTruck, _tempYlocTruck--);
+                    _tempYlocTruck--;
+                    if (checkColision(_tempXlocTruck, _tempYlocTruck, 2))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        _objectTruck.move(direction);
+                    }
                     break;
 
                 case 3:
                     _tempXlocTruck++;
-                    checkColision(_tempXlocTruck++, _tempYlocTruck);
+                    if (checkColision(_tempXlocTruck, _tempYlocTruck, 3))
+                    {
+                        break;
+                    }
+
+                    else
+                    {
+                        _objectTruck.move(direction);
+                    }
                     break;
 
                 case 4:
                     _tempYlocTruck++;
-                    checkColision(_tempXlocTruck, _tempYlocTruck++);
+                    if (checkColision(_tempXlocTruck, _tempYlocTruck, 4))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        _objectTruck.move(direction);
+                    }
                     break;
             }
-            _objectTruck.move(direction);
         }
 
         public void printArray()
@@ -181,15 +211,23 @@ namespace Sokoban
             }
         }
 
-        private void checkColision(int xloc, int yloc)
+        private bool checkColision(int xloc, int yloc, int i)
         {
-            Console.WriteLine("Truck staat op x locatie: " + _objectTruck.Xposition);
-            Console.WriteLine("Truck staat op y locatie: " + _objectTruck.Yposition);
-
-            Console.WriteLine("Truck staat op x locatie: " + xloc + "local var");
-            Console.WriteLine("Truck staat op y locatie: " + yloc + "local var");
-            Console.WriteLine(_grid[xloc, yloc]);
+            if (Grid[xloc, yloc].SetDisplayChar() == '#')
+            {
+                return true;
+            }
+            else if (Grid[xloc, yloc].MoveObject != null)
+            {
+                if (Grid[xloc,yloc].MoveObject.toChar() == '$' || Grid[xloc, yloc].MoveObject.toChar() == 'Z')
+                {
+                    return true;
+                }
+            }
+            return false;
         }
+
+
 
         public void moveCoWorker()
         {

@@ -75,21 +75,5 @@ namespace Sokoban
 
         public abstract Char SetDisplayChar();
 
-        public int SquareInDirection(Direction direction)
-        {
-            switch (direction)
-            {
-                case Direction.Up:
-                    return _Yposition - 1;
-                case Direction.Down:
-                    return _Yposition + 1;
-                case Direction.Left:
-                    return _Xposition - 1;
-                case Direction.Right:
-                    return _Xposition + 1;
-                default:
-                    return 0;
-            }
-        }
     }
 }

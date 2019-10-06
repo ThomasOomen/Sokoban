@@ -14,26 +14,10 @@ namespace Sokoban
         private int _j = 0; //Spaghetti code :)
         private int _i = 0; //Spaghetti code :)
         private StreamReader _streamReader;
-        private Maze _maze;
+
 
         //2d array waarin alle characters ingezet worden. 
         private Char[,] mazeCharArray;
-
-        //idk of dit nog nodig is. 
-        private Char[,] _charArray { get; set; }
-
-        //idk of dit nog nodig is.
-        public Char[,] CharArray
-        {
-            get
-            {
-                return _charArray;
-            }
-            set
-            {
-                _charArray = value;
-            }
-        }
 
         //initialeerd het path van de maze. speler moet wel het spel opnieuw opstarten als ie een ander doolhof wilt spelen. 
         public void initMazePath(int mazeLevel)

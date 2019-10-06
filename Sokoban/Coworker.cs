@@ -7,37 +7,12 @@ namespace Sokoban
     public class Coworker : MoveableObjects
     {
         public bool _isSleeping;
-        private int _xLoc;
-        private int _yLoc;
+
         public Coworker(int x, int y)
         {
-            xLoc = x;
-            yLoc = y;
+            this.Xposition = x;
+            this.Yposition = y;
         }
-        public int xLoc
-        {
-            get
-            {
-                return this._xLoc;
-            }
-            set
-            {
-                this._xLoc = value;
-            }
-        }
-
-        public int yLoc
-        {
-            get
-            {
-                return this._yLoc;
-            }
-            set
-            {
-                this._yLoc = value;
-            }
-        }
-
         public bool IsSleeping
         {
             get
@@ -60,7 +35,6 @@ namespace Sokoban
                 if (randomValue99 < wakePercentage)
                 {
                     _isSleeping = false;
-                    Random rDirection = new Random();
                     int direction = r.Next(4);
                     move(direction);
                 }
