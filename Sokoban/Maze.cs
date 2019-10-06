@@ -164,7 +164,6 @@ namespace Sokoban
                     break;
             }
             _objectTruck.move(direction);
-            _objectTruck.moveTruck(direction);
         }
 
         public void printArray()
