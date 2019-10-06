@@ -6,17 +6,15 @@ namespace Sokoban
 {
     public class Floor : Square
     {
-        private Destination hasDestination;
-        private DestroyableTile isDestroyable;
-        private Char displayChar;
 
+        private Char _displayChar;
         private int _xLoc;
         private int _yLoc;
         public Floor(int x, int y)
         {
             xLoc = x;
             yLoc = y;
-            displayChar = '.';
+            SetDisplayChar();
         }
         public int xLoc
         {
@@ -46,17 +44,29 @@ namespace Sokoban
         {
             if (this.IsEmpty())
             {
-                displayChar = '.';
+                _displayChar = '.';
             }
             else
             {
-                switch (this.MoveObject)
+                char c = this.MoveObject.toChar();
+                switch (c)
                 {
-                    case Crate:
+                    case 'o':
+                        _displayChar = 'o';
+                        break;
+                    case '@':
+                        _displayChar = '@';
+                        break;
+                    case 'Z':
+                        _displayChar = 'Z';
+                        break;
+                    case '$':
+                        _displayChar = '$';
                         break;
                     default:
                         break;
                 }
+
             }
         }
     }

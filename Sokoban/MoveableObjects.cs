@@ -33,6 +33,7 @@ namespace Sokoban
             }
         }
         public abstract void move(int direction);
+        public abstract Char toChar();
 
     }
 }

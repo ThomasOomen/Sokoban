@@ -36,11 +36,15 @@ namespace Sokoban
                 this._yLoc = value;
             }
         }
-        public override void move(int x)
+        public override void move(int direction)
         {
             throw new NotImplementedException();
         }
 
+        public override char toChar()
+        {
+            return 'o';
+        }
 
     }
 }
